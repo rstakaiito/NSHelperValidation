@@ -1,7 +1,7 @@
 # NSHelperValidation
-Helper Form Validation for IOS 
+Helper Form Validation cho IOS 
 
-Simple
+Cách đơn giản
 
     NSHelperValidation *helperV = [[NSHelperValidation alloc] init];
     
@@ -19,7 +19,7 @@ Simple
     }
 
 
-Sample with Flexible effect
+Cách phức tạp hơn, khi lỗi sẽ gọi vào onFail trả về key(keyname, string validation error msg). ở đây gọi đến setHighlightOrFalse để tạo hiệu ứng cho cái view nhấp nháy
 
     - (void)cleanHightLight:(NSArray *)arrItems{
         for (UIView* item in arrItems) {
