@@ -4,9 +4,7 @@ Helper Form Validation for IOS
 
 Sample
 
-NSHelperValidation *helperV = [[NSHelperValidation alloc] init];
-    
-    
+    NSHelperValidation *helperV = [[NSHelperValidation alloc] init];
     [helperV addValidation:@"Name" source:txtDisplayName.text conditions:@[@"null"]];
     [helperV addValidation:@"Username" source:txtUsername.text conditions:@[@"null"]];
     [helperV addValidation:@"Password" source:txtPassword.text conditions:@[@"null"]];
