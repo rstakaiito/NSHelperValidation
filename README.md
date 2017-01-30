@@ -1,8 +1,25 @@
 # NSHelperValidation
 Helper Form Validation for IOS 
 
+Simple
 
-Sample
+    NSHelperValidation *helperV = [[NSHelperValidation alloc] init];
+    
+    [helperV addValidation:@"Name" source:txtDisplayName.text conditions:@[@"null"]];
+    [helperV addValidation:@"Username" source:txtUsername.text conditions:@[@"null"]];
+    [helperV addValidation:@"Password" source:txtPassword.text conditions:@[@"null"]];
+    [helperV addValidation:@"Email" source:txtEmail.text conditions:@[@"null",@"email"]];
+    [helperV addValidation:@"Phone" source:txtPhone.text conditions:@[@"null"]];
+    
+    return [helperV validation:^{
+        // Done
+        NSLog(@"Done");  
+    } onFail:^(NSString *key, NSString *type, NSString *msg) {
+        NSLog(@"Error");  
+    }
+
+
+Sample with Flexible effect
 
     - (void)cleanHightLight:(NSArray *)arrItems{
         for (UIView* item in arrItems) {
