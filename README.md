@@ -4,6 +4,28 @@ Helper Form Validation for IOS
 
 Sample
 
+    - (void)cleanHightLight:(NSArray *)arrItems{
+        for (UIView* item in arrItems) {
+            [item setBackgroundColor: defaultColorField];
+        }
+    }
+
+    - (void)setHighlightOrFalse:(UIView*)target isError:(BOOL)isError{
+        if(isError){
+            [target setBackgroundColor: defaultColorField];
+            [UIView animateWithDuration:0.5 animations:^{
+                [target setBackgroundColor: [UIColor orangeColor]];
+            } completion:^(BOOL finished) {
+                [UIView animateWithDuration:1 animations:^{
+                    [target setBackgroundColor: highlColorField];
+                } completion:^(BOOL finished) {
+                }];
+            }];
+        }else{
+            [target setBackgroundColor: defaultColorField];
+        }
+    }
+
     NSHelperValidation *helperV = [[NSHelperValidation alloc] init];
     [helperV addValidation:@"Name" source:txtDisplayName.text conditions:@[@"null"]];
     [helperV addValidation:@"Username" source:txtUsername.text conditions:@[@"null"]];
